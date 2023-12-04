@@ -9,39 +9,33 @@ fun main() {
     }
 
     fun findFirstDigit(it: String): String {
-        var index = 999999
-        var digit = ""
+        var first = Pair(Int.MAX_VALUE, "")
         digits.forEach { (t, u) ->
             var i = it.indexOf(t)
-            if (i > -1 && i < index) {
-                index = i
-                digit = "$u"
+            if (i > -1 && i < first.first) {
+                first = Pair(i, "$u")
             }
             i = it.indexOf("$u")
-            if (i > -1 && i < index) {
-                index = i
-                digit = "$u"
+            if (i > -1 && i < first.first) {
+                first = Pair(i, "$u")
             }
         }
-        return digit
+        return first.second
     }
 
     fun findLastDigit(it: String): String {
-        var index = -1
-        var digit = ""
+        var last = Pair(-1, "")
         digits.forEach { (t, u) ->
             var i = it.lastIndexOf(t)
-            if (i > index) {
-                index = i
-                digit = "$u"
+            if (i > last.first) {
+                last = Pair(i, "$u")
             }
             i = it.lastIndexOf("$u")
-            if (i > index) {
-                index = i
-                digit = "$u"
+            if (i > last.first) {
+                last = Pair(i, "$u")
             }
         }
-        return digit
+        return last.second
     }
 
     fun part2(input: List<String>): Int {
