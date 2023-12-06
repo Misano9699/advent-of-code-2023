@@ -2,8 +2,6 @@ import kotlin.math.pow
 
 fun main() {
 
-    val WHITESPACE = "\\s+".toRegex()
-
     fun determinePlays(input: List<String>): MutableList<Triple<Int,Int,Int>> {
         return input.map { it ->
             val cards = it.split(": ")
