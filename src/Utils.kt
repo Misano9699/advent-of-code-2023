@@ -21,3 +21,5 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
 fun Any?.println() = println(this)
 
 val WHITESPACE = "\\s+".toRegex()
+
+data class Point(val x: Int, val y: Int)
